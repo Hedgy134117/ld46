@@ -3,11 +3,8 @@ extends TextEdit
 
 func _process(_delta: float) -> void:
 	var words = get_words()
+	type_words(words)
 	
-	for word in words:
-		if get_node(".").text == word.text:
-			word.queue_free()
-			get_node(".").text = ""
 
 
 func get_words() -> Array:
@@ -28,3 +25,47 @@ func get_words() -> Array:
 			words.erase(word)
 
 	return words
+
+
+func type_words(words: Array) -> void:
+	var currentWord = null
+	var currentText = get_node(".").text
+	
+	for word in words:
+		# if words.text[0] == currentText
+		# if words.text[0] and words.text[1] == currentText
+		# if words.text[0] and words.text[1] and words.text[2] == currentText
+		# ...
+		if currentText != "":
+			for i in range(word.text.length()):
+				var textPortion = ""
+				for j in range(i):
+					textPortion += word.text[j]
+				if currentText == textPortion:
+					currentWord = word
+			
+		if word.text[0] == currentText or word.text[0] + word.text[1] == currentText:
+			currentWord = word
+		
+		if currentText == word.text:
+			word.queue_free()
+			get_node(".").text = ""
+	
+	if currentWord != null:
+		print(currentWord)
+		highlight_word(currentWord, words)
+	else:
+		unhilight_words(words)
+
+
+func highlight_word(word: Control, words: Array) -> void:
+	word.modulate = Color(1, 1, 1, 1)
+	
+	for otherWord in words:
+		if otherWord != word:
+			otherWord.modulate = Color(1, 1, 1, 0.5)
+
+
+func unhilight_words(words: Array):
+	for word in words:
+		word.modulate = Color(1, 1, 1, 1)

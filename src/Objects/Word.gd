@@ -2,7 +2,7 @@ extends RichTextLabel
 
 
 var word = ""
-var speed = 1
+var speed = 0.5
 var itRange = Vector2(75, 75)
 
 func _ready() -> void:
@@ -35,18 +35,15 @@ func moveToIt() -> void:
 	var itPos = it.rect_position
 	var dif = itPos - self.rect_position
 	
-	if dif.x >= -itRange.x and dif.x <= itRange.x and dif.y >= -itRange.y and dif.y <= itRange.y:
-		queue_free()
+	if dif.x > 0:
+		self.rect_position.x += speed
 	else:
-		if dif.x > 0:
-			self.rect_position.x += speed
-		else:
-			self.rect_position.x -= speed
-		
-		if dif.y > 0:
-			self.rect_position.y += speed
-		else:
-			self.rect_position.y -= speed
+		self.rect_position.x -= speed
+	
+	if dif.y > 0:
+		self.rect_position.y += speed
+	else:
+		self.rect_position.y -= speed
 
 
 func set_word_position(pos: Vector2) -> void:

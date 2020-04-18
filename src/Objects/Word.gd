@@ -10,7 +10,6 @@ func load_words():
 	var index = randi() % 1000
 	
 	var lineCounter = 0
-	print(index)
 	while not f.eof_reached():
 		word = f.get_line()
 		if lineCounter == index:

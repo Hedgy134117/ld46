@@ -10,7 +10,7 @@ size = 100
 font_data = SubResource( 1 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 38.9008, 37.6744 )
+extents = Vector2( 24.9341, 37.6744 )
 
 [node name="IT" type="RichTextLabel"]
 margin_right = 93.0
@@ -24,8 +24,9 @@ __meta__ = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 44.6937, 54.4704 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 46.7887, 56.5654 )
+position = Vector2( -11.1734, -0.698349 )
 shape = SubResource( 3 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

@@ -36,5 +36,5 @@ margin_top = 362.787
 margin_right = 214.891
 margin_bottom = 402.787
 
-[node name="ProgressBar" parent="." instance=ExtResource( 3 )]
+[node name="HealthBar" parent="." instance=ExtResource( 3 )]
 margin_bottom = 35.0

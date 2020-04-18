@@ -1,8 +1,13 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="ProgressBar" type="ProgressBar"]
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.784314, 0.290196, 0.282353, 1 )
+
+[node name="HealthBar" type="ProgressBar"]
 anchor_right = 1.0
 margin_bottom = 28.0
+custom_styles/fg = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 value = 100.0
 percent_visible = false
 __meta__ = {

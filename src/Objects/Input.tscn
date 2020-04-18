@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Objects/Input.gd" type="Script" id=1]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Roboto-Medium.ttf"
@@ -14,6 +16,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Hello World!"
 context_menu_enabled = false
 wrap_enabled = true
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

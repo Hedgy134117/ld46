@@ -77,4 +77,9 @@ func explode_word(word: Node):
 	get_node("/root/Control").call_deferred("add_child", explosion)
 	
 	word.queue_free()
+	increase_score()
 	get_node(".").text = ""
+
+
+func increase_score():
+	get_node("/root/Score").score += 1

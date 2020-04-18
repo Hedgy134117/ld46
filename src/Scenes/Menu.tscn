@@ -61,7 +61,21 @@ mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 5 )
 text = "QUIT"
 flat = true
+
+[node name="Difficulty" type="OptionButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 106.368
+margin_top = -102.0
+margin_right = 192.368
+margin_bottom = -60.0
+text = "Easy"
+items = [ "Easy", null, false, 0, null, "Medium", null, false, 1, null, "Hard", null, false, 2, null ]
+selected = 0
 [connection signal="button_up" from="PlayButton" to="PlayButton" method="_on_PlayButton_button_up"]
 [connection signal="button_up" from="PlayButton" to="." method="_on_PlayButton_button_up"]
 [connection signal="button_up" from="InstructionButton" to="." method="_on_InstructionButton_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_QuitButton_button_up"]
+[connection signal="item_selected" from="Difficulty" to="." method="_on_Difficulty_item_selected"]

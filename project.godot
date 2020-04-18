@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Score="*res://src/Score.gd"
+Difficulty="*res://src/Difficulty.gd"
 
 [display]
 

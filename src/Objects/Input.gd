@@ -48,11 +48,9 @@ func type_words(words: Array) -> void:
 			currentWord = word
 		
 		if currentText == word.text:
-			word.queue_free()
-			get_node(".").text = ""
+			explode_word(word)
 	
 	if currentWord != null:
-		print(currentWord)
 		highlight_word(currentWord, words)
 	else:
 		unhilight_words(words)
@@ -69,3 +67,14 @@ func highlight_word(word: Control, words: Array) -> void:
 func unhilight_words(words: Array):
 	for word in words:
 		word.modulate = Color(1, 1, 1, 1)
+
+
+func explode_word(word: Node):
+	var explosion = load("res://src/Particles/Explosion.tscn")
+	explosion = explosion.instance()
+	explosion.position = word.rect_position
+	explosion.emitting = true
+	get_node("/root/Control").call_deferred("add_child", explosion)
+	
+	word.queue_free()
+	get_node(".").text = ""

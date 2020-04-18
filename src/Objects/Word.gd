@@ -3,17 +3,16 @@ extends RichTextLabel
 
 var word = ""
 
-func load_words():
+func choose_word():
 	var f = File.new()
 	f.open("res://assets/words.txt", File.READ)
 	randomize()
-	var index = randi() % 1000
+	var index = randi() % 5000
 	
 	var lineCounter = 0
 	while not f.eof_reached():
 		word = f.get_line()
 		if lineCounter == index:
-			print('hello')
 			break
 		lineCounter += 1
 		
@@ -22,7 +21,7 @@ func load_words():
 	
 
 func _ready() -> void:
-	load_words()
+	choose_word()
 
 
 func set_word_position(pos: Vector2) -> void:

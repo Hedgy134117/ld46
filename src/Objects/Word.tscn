@@ -10,14 +10,8 @@ size = 32
 font_data = SubResource( 1 )
 
 [node name="Word" type="RichTextLabel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -646.0
-margin_top = -20.0
-margin_right = 648.0
-margin_bottom = 20.0
+margin_right = 299.0
+margin_bottom = 40.0
 custom_fonts/normal_font = SubResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {

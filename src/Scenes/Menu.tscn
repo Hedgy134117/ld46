@@ -74,7 +74,6 @@ margin_bottom = -60.0
 text = "Easy"
 items = [ "Easy", null, false, 0, null, "Medium", null, false, 1, null, "Hard", null, false, 2, null ]
 selected = 0
-[connection signal="button_up" from="PlayButton" to="PlayButton" method="_on_PlayButton_button_up"]
 [connection signal="button_up" from="PlayButton" to="." method="_on_PlayButton_button_up"]
 [connection signal="button_up" from="InstructionButton" to="." method="_on_InstructionButton_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_QuitButton_button_up"]

@@ -78,8 +78,13 @@ func explode_word(word: Node):
 	
 	word.queue_free()
 	increase_score()
+	explode_sound()
 	get_node(".").text = ""
 
 
 func increase_score():
 	get_node("/root/Score").score += 1
+
+
+func explode_sound() -> void:
+	get_node("/root/Control/SoundEffects").get_child(0).play()

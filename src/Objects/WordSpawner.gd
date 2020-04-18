@@ -24,7 +24,7 @@ func set_difficulty() -> void:
 func spawn_word() -> void:
 	var obj = load("res://src/Objects/Word.tscn")
 	obj = obj.instance()
-	var newPos = Vector2(randi() % 2 * 1280, rand_range(0, 720))
+	var newPos = Vector2(randi() % 4 * 320, rand_range(0, 720))
 
 	obj.set_word_position(newPos)
 	get_node("/root/Control").call_deferred("add_child", obj)

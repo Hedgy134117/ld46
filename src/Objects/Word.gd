@@ -35,14 +35,16 @@ func moveToIt() -> void:
 	var itPos = it.rect_position
 	var dif = itPos - self.rect_position
 	
+	# Go right / left
 	if dif.x > 0:
 		self.rect_position.x += speed
-	else:
+	elif dif.x < 0:
 		self.rect_position.x -= speed
 	
+	# Go up / down
 	if dif.y > 0:
 		self.rect_position.y += speed
-	else:
+	elif dif.y < 0:
 		self.rect_position.y -= speed
 
 

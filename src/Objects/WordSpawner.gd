@@ -8,7 +8,6 @@ func _ready() -> void:
 func set_difficulty() -> void:
 	var Difficulty = get_node("/root/Difficulty")
 	
-	print(Difficulty.difficulty)
 	match Difficulty.difficulty:
 		1:
 			get_node("Timer").wait_time = Difficulty.easyStartTime
@@ -24,7 +23,18 @@ func set_difficulty() -> void:
 func spawn_word() -> void:
 	var obj = load("res://src/Objects/Word.tscn")
 	obj = obj.instance()
-	var newPos = Vector2(randi() % 4 * 320, rand_range(0, 720))
+	var newPosPos = randi() % 4
+	var newPos = Vector2()
+	match(newPosPos):
+		1:
+			newPos = Vector2(randi() % 1280, 0)
+		2:
+			newPos = Vector2(1280, randi() % 720)
+		3:
+			newPos = Vector2(randi() % 1280, 720)
+		4:
+			newPos = Vector2(0, randi() % 720)
+	
 
 	obj.set_word_position(newPos)
 	get_node("/root/Control").call_deferred("add_child", obj)
@@ -37,8 +47,7 @@ func _on_Timer_timeout() -> void:
 
 func _on_DifficultyTimer_timeout() -> void:
 	var Difficulty = get_node("/root/Difficulty")
-	if Difficulty.difficulty != 1:
+	if Difficulty.difficulty != 5:
 		get_node("/root/Difficulty").difficulty += 1
-		print("CHANGED")
 		set_difficulty()
 	

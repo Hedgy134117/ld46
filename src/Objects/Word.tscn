@@ -26,5 +26,5 @@ __meta__ = {
 position = Vector2( 100.349, 15.8446 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -58.537, -0.44014 )
+position = Vector2( -8.36249, -0.880265 )
 shape = SubResource( 3 )

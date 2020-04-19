@@ -1,5 +1,6 @@
 extends Node2D
 
+var startingDifficulty = 1
 var difficulty = 1
 
 var easyStartTime = 5
